@@ -2,18 +2,20 @@ from flask import (Flask, render_template, request, flash)
 from flaskext.mysql import MySQL
 import pymysql.cursors
 import json
-from decouple import config
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 app = Flask(__name__)
 
-app.secret_key = config('SECRET_KEY')
+app.secret_key = os.getenv('SECRET_KEY')
 
 # Database Configuration
-app.config['MYSQL_DATABASE_HOST'] = config('DATABASE_HOST')
-app.config['MYSQL_DATABASE_DB'] = config('DATABASE_DB')
-app.config['MYSQL_DATABASE_USER'] = config('DATABASE_USER')
-app.config['MYSQL_DATABASE_PASSWORD'] = config('DATABASE_PASSWORD')
+app.config['MYSQL_DATABASE_HOST'] = os.getenv('DATABASE_HOST')
+app.config['MYSQL_DATABASE_DB'] = os.getenv('DATABASE_DB')
+app.config['MYSQL_DATABASE_USER'] = os.getenv('DATABASE_USER')
+app.config['MYSQL_DATABASE_PASSWORD'] = os.getenv('DATABASE_PASSWORD')
 
 # Initializing MySQL Database
 mysql = MySQL(app, cursorclass=pymysql.cursors.DictCursor)
