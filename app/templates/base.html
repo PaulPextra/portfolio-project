@@ -53,6 +53,9 @@
                 <ul class="nav navbar-nav">
                   <li {% block home_active %}{% endblock home_active %}><a href="{{ url_for('home') }}">Home</a></li>
                 </ul>
+                <ul class="nav navbar-nav">
+                  <li><a href="{{ url_for('admin_dashboard') }}">Dashboard</a></li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li {% block get_started_active %}{% endblock get_started_active %}><a href="{{ url_for('studentform') }}">Get Started</a></li>
                 </ul>
@@ -70,7 +73,7 @@
       <!-- Footer Section -->
         <footer class="footer">
             <div class="container">
-              <p>All Rights Reserved &copy;ALX 2023</p>
+              <p>All Rights Reserved &copy;GeekNgr 2023</p>
             </div>
         </footer>
       <!-- End of Footer Section -->
