@@ -22,7 +22,7 @@ a.navbar-brand img{
     height: 100%;
 }
 a:hover.navbar-brand img{
-    background-color: #fff;
+    background-color: transparent;
 }
 
 /* Flash Messages Style Rule */
